@@ -6,16 +6,16 @@ import SearchPage from "../Pages/SearchPage/SearchPage";
 import {createBrowserRouter} from "react-router";
 import CompanyProfile from "../Components/CompanyProfile/CompanyProfile";
 import IncomeStatement from "../Components/IncomeStatement/IncomeStatement";
-import DesignPage from "../Pages/DesignPage/DesignPage";
+import DesignGuide from "../Pages/DesignPage/DesignGuide";
 
-export const  router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
       { path: "", element: <HomePage /> },
       { path: "search", element: <SearchPage /> },
-      { path: "design-guide", element: <DesignPage /> },
+      { path: "design-guide", element: <DesignGuide /> },
       {
         path: "company/:ticker",
         element: <CompanyPage />,

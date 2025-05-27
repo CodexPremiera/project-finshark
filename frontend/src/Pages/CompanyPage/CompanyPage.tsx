@@ -6,9 +6,7 @@ import Sidebar from "../../Components/Sidebar/Sidebar";
 import Tile from "../../Components/Tile/Tile";
 import CompanyDashboard from "../../Components/CompanyDashboard/CompanyDashboard";
 
-interface Props {}
-
-const CompanyPage = (props: Props) => {
+const CompanyPage = () => {
   let { ticker } = useParams();
   const [company, setCompany] = useState<CompanyProfile>();
 
@@ -30,7 +28,7 @@ const CompanyPage = (props: Props) => {
       {company ? (
         <div className="w-full relative flex ct-docs-disable-sidebar-content overflow-x-hidden">
           <Sidebar />
-          < CompanyDashboard>
+          <CompanyDashboard ticker={ticker!}>
             <Tile title="Company Name" subTitle={company.companyName} />
           </CompanyDashboard>
         </div>
