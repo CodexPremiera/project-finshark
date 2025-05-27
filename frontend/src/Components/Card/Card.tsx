@@ -25,7 +25,7 @@ const Card: React.FC<Props> = ({
       </h2>
       <p className="text-veryDarkBlue">{company.currency}</p>
       <Link
-        to={`/company/${company.symbol}`}
+        to={`/company/${company.symbol}/company-profile`}
         className="font-bold text-center text-veryDarkViolet md:text-left"
       >
         {company.name} ({company.symbol})
