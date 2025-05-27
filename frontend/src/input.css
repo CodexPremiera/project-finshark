@@ -2,10 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer theme, base, components, utilities;
-
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Rubik&display=swap");
 
 @theme {
     --breakpoint-sm: 408px;

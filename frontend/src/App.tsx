@@ -1,10 +1,14 @@
 import { ChangeEvent, SyntheticEvent, useState } from "react";
 import "./App.css";
+import "./input.css";
+import "./index.css";
+import "./output.css";
 import CardList from "./Components/CardList/CardList";
 import Search from "./Components/Search/Search";
 import { searchCompanies } from "./api";
 import { CompanySearch } from "./company";
-import ListPortfolio from "./Components/Portfolio/ListPortfolio/ListPortfolio";
+import ListPortfolio from "./Components/Portfolio/ListPortfolio";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   const [search, setSearch] = useState<string>("");
@@ -47,7 +51,8 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <>
+      <Navbar />
       <Search
         onSearchSubmit={onSearchSubmit}
         search={search}
@@ -61,8 +66,9 @@ function App() {
         searchResults={searchResult}
         onPortfolioCreate={onPortfolioCreate}
       />
+
       {serverError && <div>Unable to connect to API</div>}
-    </div>
+    </>
   );
 }
 
