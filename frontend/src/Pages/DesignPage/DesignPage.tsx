@@ -1,6 +1,7 @@
 
 import React from "react";
 import Table from "../../Components/Table/Table";
+import RatioList from "../../Components/RatioList/RatioList";
 
 type Props = {};
 
@@ -11,6 +12,7 @@ const DesignPage = (props: Props) => {
         Design guide- This is the design guide for Fin Shark. These are reuable
         components of the app with brief instructions on how to use them.
       </h1>
+      <RatioList />
       <Table />
       <h3>
         Table - Table takes in a configuration object and company data as
