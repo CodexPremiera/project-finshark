@@ -34,7 +34,12 @@ const config = [
     label: "Total Debt",
     render: (company: CompanyBalanceSheet) => company.otherCurrentLiabilities,
   },
+  {
+    label: "Retained Earnings",
+    render: (company: CompanyBalanceSheet) => company.retainedEarnings,
+  },
 ];
+
 
 const BalanceSheet = () => {
   const ticker = useOutletContext<string>();

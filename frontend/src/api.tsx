@@ -2,10 +2,12 @@ import axios from "axios";
 import {
   CompanyBalanceSheet,
   CompanyCashFlow,
+  CompanyCompData,
   CompanyIncomeStatement,
   CompanyKeyMetrics,
   CompanyProfile,
   CompanySearch,
+  CompanyTenK,
 } from "./company";
 
 export interface SearchResponse {
@@ -77,3 +79,24 @@ export const getCashFlow = async (query: string) => {
     console.log("error message: ", error.message);
   }
 }
+
+export const getCompData = async (query: string) => {
+  try {
+    return await axios.get<CompanyCompData[]>(
+      `https://financialmodelingprep.com/api/v3/stock_peers?symbol=${query}?limit=40&apikey=${process.env.REACT_APP_API_KEY}`
+    );
+  } catch (error: any) {
+    console.log("error message: ", error.message);
+  }
+}
+
+
+export const getTenK = async (query: string) => {
+  try {
+    return await axios.get<CompanyTenK[]>(
+        `https://financialmodelingprep.com/api/v3/sec_filings/${query}?limit=40&apikey=${process.env.REACT_APP_API_KEY}`
+    );
+  } catch (error: any) {
+    console.log("error message: ", error.message);
+  }
+};
