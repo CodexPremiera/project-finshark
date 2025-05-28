@@ -5,6 +5,7 @@ import {getCompanyProfile} from "../../api";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Tile from "../../Components/Tile/Tile";
 import CompanyDashboard from "../../Components/CompanyDashboard/CompanyDashboard";
+import Spinner from "../../Components/Spinner/Spinner";
 
 const CompanyPage = () => {
   let { ticker } = useParams();
@@ -30,10 +31,14 @@ const CompanyPage = () => {
           <Sidebar />
           <CompanyDashboard ticker={ticker!}>
             <Tile title="Company Name" subTitle={company.companyName} />
+            <Tile title="Price" subTitle={company.price.toString()} />
+            <Tile title="Sector" subTitle={company.sector} />
+            <Tile title="Market Cap" subTitle={company.mktCap.toString()} />
+            <p className="bg-white shadow rounded text-medium text-gray-900 p-3 m-4">{company.description}</p>
           </CompanyDashboard>
         </div>
       ) : (
-        <div>Company Not Found!</div>
+        <Spinner />
       )}
     </>
   );

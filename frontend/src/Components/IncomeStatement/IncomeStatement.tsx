@@ -4,6 +4,7 @@ import { useOutletContext } from "react-router-dom";
 import Table from "../Table/Table";
 import { CompanyIncomeStatement } from "../../company";
 import { getIncomeStatement } from "../../api";
+import Spinner from "../Spinner/Spinner";
 
 
 const configs = [
@@ -45,7 +46,7 @@ const IncomeStatement = () => {
       {incomeStatement ? (
         <Table config={configs} data={incomeStatement} />
       ) : (
-        <h1>Could not find income statement.</h1>
+        <Spinner />
       )}
     </>
   );
