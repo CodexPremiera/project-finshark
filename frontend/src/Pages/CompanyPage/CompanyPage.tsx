@@ -6,7 +6,7 @@ import Sidebar from "../../Components/Sidebar/Sidebar";
 import Tile from "../../Components/Tile/Tile";
 import CompanyDashboard from "../../Components/CompanyDashboard/CompanyDashboard";
 import Spinner from "../../Components/Spinner/Spinner";
-import CompFinder from "../../Components/CompFinder/CompFinder";
+import {formatLargeMonetaryNumber} from "../../Helpers/NumberFormatting";
 
 const CompanyPage = () => {
   let { ticker } = useParams();
@@ -32,11 +32,11 @@ const CompanyPage = () => {
           <Sidebar />
           <CompanyDashboard ticker={ticker!}>
             <Tile title="Company Name" subTitle={company.companyName} />
-            <Tile title="Price" subTitle={company.price.toString()} />
+            <Tile title="Price" subTitle={formatLargeMonetaryNumber(company.price)} />
+            <Tile title="DCF" subTitle={formatLargeMonetaryNumber(company.dcf)} />
             <Tile title="Sector" subTitle={company.sector} />
-            <Tile title="Market Cap" subTitle={company.mktCap.toString()} />
 
-            <CompFinder ticker={company.symbol} />
+            {/*<CompFinder ticker={company.symbol} />*/}
 
             <p className="bg-white shadow rounded text-medium text-gray-900 p-3 m-4">{company.description}</p>
           </CompanyDashboard>
