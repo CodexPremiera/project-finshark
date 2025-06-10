@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace api.Models
 {
     public class Comment
@@ -14,6 +9,6 @@ namespace api.Models
         public int? StockId { get; set; }
 
         // Navigation property: allow us to `dot` later
-        public Stocks? Stock { get; set; }
+        public Stock? Stock { get; set; }
     }
 }
