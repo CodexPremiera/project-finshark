@@ -1,4 +1,5 @@
 ﻿using api.Data;
+using api.Mappers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers;
@@ -16,17 +17,20 @@ public class StockController : ControllerBase
     [HttpGet]
     public IActionResult GetAll()
     {
-        var stocks = _context.Stocks.ToList();
+        var stocks = _context.Stocks.ToList()
+            .Select(s => s.ToStockDto());
+        
         return Ok(stocks);
     }
 
     [HttpGet("{id}")]
     public IActionResult GetById([FromRoute] int id)
     {
-        var stock = _context.Stocks.Find(id);
+        var stock = _context.Stocks.Find(id)
+            ;
 
         if (stock == null)
             return NotFound();
-        return Ok(stock);
+        return Ok(stock.ToStockDto());
     }
 }
