@@ -52,7 +52,6 @@ public class StockController : ControllerBase
     public IActionResult Update([FromRoute] int id, [FromBody] UpdateStockDto updateDto)
     {
         var stock = _context.Stocks.FirstOrDefault(s => s.Id == id);
-        
         if (stock == null)
             return NotFound();
 
@@ -65,5 +64,19 @@ public class StockController : ControllerBase
         
         _context.SaveChanges();
         return Ok(stock.ToStockDto());
+    }
+
+    [HttpDelete]
+    [Route("{id}")]
+    public IActionResult Delete([FromRoute] int id)
+    {
+        var stock = _context.Stocks.FirstOrDefault(s => s.Id == id);
+        if (stock == null)
+            return NotFound();
+        
+        _context.Stocks.Remove(stock);
+        _context.SaveChanges();
+        
+        return NoContent();
     }
 }
