@@ -171,3 +171,4 @@ D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Micr
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
