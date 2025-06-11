@@ -27,7 +27,6 @@ D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\obj\Debug\net8.0\refi
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\obj\Debug\net8.0\api.pdb
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\obj\Debug\net8.0\api.genruntimeconfig.cache
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\obj\Debug\net8.0\ref\api.dll
-D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\api.staticwebassets.endpoints.json
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Azure.Core.dll
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Azure.Identity.dll
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Humanizer.dll
@@ -164,5 +163,8 @@ D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\runt
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\obj\Debug\net8.0\staticwebassets.build.json.cache
-D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\obj\Debug\net8.0\staticwebassets\msbuild.api.Microsoft.AspNetCore.StaticWebAssets.props
+D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\obj\Debug\net8.0\staticwebassets\msbuild.build.api.props
+D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.api.props
+D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.api.props
+D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\obj\Debug\net8.0\staticwebassets.pack.json
