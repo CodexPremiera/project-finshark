@@ -26,4 +26,14 @@ public static class CommentMappers
             StockId = stockId
         };
     }
+    
+    public static Comment ToComment(this UpdateCommentDto commentDto, int stockId)
+    {
+        return new Comment
+        {
+            Title = commentDto.Title,
+            Content = commentDto.Content,
+            StockId = stockId
+        };
+    }
 }

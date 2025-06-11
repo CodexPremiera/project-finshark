@@ -53,6 +53,14 @@ public class CommentController : ControllerBase
             new { id = newComment.Id }, 
             newComment.ToCommentDto()  // Convert result to ToCommentDto 
         );
-        
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateCommentDto updateCommentDto)
+    {
+        var comment = await _commentRepo.UpdateAsync(id, updateCommentDto.ToComment(id));
+        return comment == null 
+            ? NotFound("Comment not found") 
+            : Ok(comment.ToCommentDto());
     }
 }
