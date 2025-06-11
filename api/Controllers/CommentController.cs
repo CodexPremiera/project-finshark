@@ -22,15 +22,21 @@ public class CommentController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+        
         var comments = await _commentRepo.GetAllAsync();
         comments.Select(s => s.ToCommentDto());
         
         return Ok(comments);
     }
     
-    [HttpGet("{id}")]
+    [HttpGet("{id:int}")]
     public async Task<IActionResult> GetById([FromRoute] int id)
     {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+        
         var comment = await _commentRepo.GetByIdAsync(id);
 
         if (comment == null)
@@ -39,9 +45,12 @@ public class CommentController : ControllerBase
         return Ok(comment.ToCommentDto());
     }
     
-    [HttpPost("{stockId}")]
+    [HttpPost("{stockId:int}")]
     public async Task<IActionResult> Create([FromRoute] int stockId, CreateCommentDto commentDto)
     {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+        
         if (!await _stockRepo.StockExistAsync(stockId))
             return BadRequest("Stock does not exist");
 
@@ -55,18 +64,24 @@ public class CommentController : ControllerBase
         );
     }
 
-    [HttpPut("{id}")]
+    [HttpPut("{id:int}")]
     public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateCommentDto updateCommentDto)
     {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+        
         var comment = await _commentRepo.UpdateAsync(id, updateCommentDto.ToComment(id));
         return comment == null 
             ? NotFound("Comment not found") 
             : Ok(comment.ToCommentDto());
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete("{id:int}")]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+        
         var comment = await _commentRepo.DeleteAsync(id);
         return comment == null 
             ? NotFound("Comment not found") 
