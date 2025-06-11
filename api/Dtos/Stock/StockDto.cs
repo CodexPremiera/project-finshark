@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using api.Models;
-
-namespace api.Dtos.Stock;
+﻿namespace api.Dtos.Stock;
 
 public class StockDto
 {

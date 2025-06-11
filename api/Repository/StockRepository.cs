@@ -15,11 +15,11 @@ public class StockRepository : IStockRepository
         _context = context;
     }
     
-    public async Task<Stock> CreateAsync(Stock stockModel)
+    public async Task<Stock> CreateAsync(Stock stock)
     {
-        await _context.Stocks.AddAsync(stockModel);
+        await _context.Stocks.AddAsync(stock);
         await _context.SaveChangesAsync();
-        return stockModel;
+        return stock;
     }
 
     public async Task<List<Stock>> GetAllAsync()
@@ -32,19 +32,19 @@ public class StockRepository : IStockRepository
         return await _context.Stocks.FindAsync(id);
     }
 
-    public async Task<Stock?> UpdateAsync(int id, UpdateStockDto stockDto)
+    public async Task<Stock?> UpdateAsync(int id, UpdateStockDto updateStockDto)
     {
         var existingStock = await _context.Stocks.FirstOrDefaultAsync(x => x.Id == id);
 
         if (existingStock == null)
             return null;
 
-        existingStock.Symbol = stockDto.Symbol;
-        existingStock.CompanyName = stockDto.CompanyName;
-        existingStock.Purchase = stockDto.Purchase;
-        existingStock.LastDiv = stockDto.LastDiv;
-        existingStock.Industry = stockDto.Industry;
-        existingStock.MarketCap = stockDto.MarketCap;
+        existingStock.Symbol = updateStockDto.Symbol;
+        existingStock.CompanyName = updateStockDto.CompanyName;
+        existingStock.Purchase = updateStockDto.Purchase;
+        existingStock.LastDiv = updateStockDto.LastDiv;
+        existingStock.Industry = updateStockDto.Industry;
+        existingStock.MarketCap = updateStockDto.MarketCap;
 
         await _context.SaveChangesAsync();
 

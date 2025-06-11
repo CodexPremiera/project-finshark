@@ -3,7 +3,6 @@ using api.Dtos.Stock;
 using api.Interfaces;
 using api.Mappers;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace api.Controllers;
 
@@ -11,18 +10,19 @@ namespace api.Controllers;
 [ApiController]
 public class StockController : ControllerBase
 {
-    private readonly ApplicationDBContext _context;
+    // INITIAlIZE REPOSITORY  
     private readonly IStockRepository _stockRepo;
-    public StockController(ApplicationDBContext context, IStockRepository stockRepo)
+    public StockController(IStockRepository stockRepo)
     {
         _stockRepo = stockRepo;
-        _context = context;
     }
 
+    
+    // CONTROL HTTP METHODS
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateStockDto createDto) // get id from body 
     {
-        var newStock = createDto.ToStockFromCreateDto();
+        var newStock = createDto.ToStock();
         await _stockRepo.CreateAsync(newStock);
         
         return CreatedAtAction (
