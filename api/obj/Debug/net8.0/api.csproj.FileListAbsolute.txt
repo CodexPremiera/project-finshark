@@ -5,7 +5,6 @@ D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\api.
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\api.runtimeconfig.json
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\api.dll
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\api.pdb
-D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Microsoft.OpenApi.dll
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -168,3 +167,7 @@ D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\obj\Debug\net8.0\stat
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.api.props
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.api.props
 D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\obj\Debug\net8.0\staticwebassets.pack.json
+D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\PremieraAlpha\Career\Programming\Portfolio\FinShark\api\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
