@@ -33,6 +33,9 @@ public class AccountController : ControllerBase
         if (user == null) 
             return Unauthorized("Invalid username!");
         
+        if (string.IsNullOrWhiteSpace(loginDto.Password))
+            return BadRequest("Password is required.");
+        
         var result = await _signInManager.PasswordSignInAsync(user, loginDto.Password, false, false);
         
         if (!result.Succeeded) 
@@ -79,8 +82,8 @@ public class AccountController : ControllerBase
             return Ok(
                 new NewUserDto
                 {
-                    UserName = appUser.UserName,
-                    Email = appUser.Email,
+                    UserName = appUser.UserName!,
+                    Email = appUser.Email!,
                     Token = _tokenService.CreateToken(appUser)
                 }
             );

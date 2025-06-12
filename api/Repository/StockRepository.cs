@@ -16,7 +16,7 @@ public class StockRepository : IStockRepository
         _context = context;
     }
     
-    public async Task<Stock> CreateAsync(Stock stock)
+    public async Task<Stock?> CreateAsync(Stock stock)
     {
         await _context.Stocks.AddAsync(stock);
         await _context.SaveChangesAsync();

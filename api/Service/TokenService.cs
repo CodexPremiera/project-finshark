@@ -14,15 +14,21 @@ public class TokenService : ITokenService
     public TokenService(IConfiguration config)
     {
         _config = config;
-        _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JWT:SigningKey"]));
+        var signingKey = _config["JWT:SigningKey"] 
+                         ?? throw new InvalidOperationException("JWT:SigningKey is missing from configuration.");
+
+        _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signingKey));
     }
 
     public string CreateToken(AppUser user)
     {
         var claims = new List<Claim>
         {
-            new Claim(JwtRegisteredClaimNames.Email, user.Email),
-            new Claim(JwtRegisteredClaimNames.GivenName, user.UserName)
+            new Claim(JwtRegisteredClaimNames.Email, 
+                user.Email ?? throw new InvalidOperationException("User email is null")),
+            
+            new Claim(JwtRegisteredClaimNames.GivenName, 
+                user.UserName ?? throw new InvalidOperationException("User username is null"))
         };
         
         var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
