@@ -135,6 +135,14 @@ if (app.Environment.IsDevelopment())
 // Use HTTPS for secure communication
 app.UseHttpsRedirection();
 
+// Enable CORS
+app.UseCors(x => x
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .AllowCredentials()
+    //.WithOrigins("https://localhost:44351)
+    .SetIsOriginAllowed(origin => true));
+
 // Enable authentication/authorization middleware in request pipeline
 app.UseAuthentication();
 app.UseAuthorization();
