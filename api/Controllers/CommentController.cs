@@ -37,9 +37,9 @@ public class CommentController : ControllerBase
             return BadRequest(ModelState);
         
         var comments = await _commentRepo.GetAllAsync(queryObject);
-        comments.Select(s => s.ToCommentDto());
-        
-        return Ok(comments);
+        var commentDto = comments.Select(s => s.ToCommentDto());
+
+        return Ok(commentDto);
     }
     
     [HttpGet("{id:int}")]
